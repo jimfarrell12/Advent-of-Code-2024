@@ -5,8 +5,9 @@ a = []
 b = []
 
 for line in lines:
-    a.append(line.split()[0])
-    b.append(line.split()[1])
+    nums = line.split()
+    a.append(nums[0])
+    b.append(nums[1])
 
 ans = 0
 
