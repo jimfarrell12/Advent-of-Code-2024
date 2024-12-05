@@ -1,11 +1,13 @@
 def pair_nums(nums):
-    return list(zip(nums, nums[1:]))
+    pairs = list(zip(nums, nums[1:]))
+    return pairs
 
 def is_safe(pairs):
     increasing = all(a < b for a, b in pairs)
     decreasing = all(a > b for a, b in pairs)
     within_range = all(1 <= abs(a - b) <= 3 for a, b in pairs)
-    return (increasing or decreasing) and within_range
+    safety = (increasing or decreasing) and within_range
+    return safety
 
 with open("input_day2.txt", "r") as file:
     lines = file.read().splitlines()
