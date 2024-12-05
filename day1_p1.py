@@ -12,12 +12,12 @@ for line in lines:
 a.sort()
 b.sort()
 
-dists = []
+diffs = []
 
 for i in range(len(a)):
-    dist = abs(a[i] - b[i])
-    dists.append(dist)
+    diff = abs(a[i] - b[i])
+    diffs.append(diff)
 
-total_dist = sum(dists)
+total_diff = sum(diffs)
 
-print(total_dist)
+print(total_diff)
