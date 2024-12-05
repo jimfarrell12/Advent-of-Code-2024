@@ -5,8 +5,9 @@ a = []
 b = []
 
 for line in lines:
-    a.append(int(line.split()[0]))
-    b.append(int(line.split()[1]))
+    nums = list(map(int, line.split()))
+    a.append(nums[0])
+    b.append(nums[1])
 
 a.sort()
 b.sort()
