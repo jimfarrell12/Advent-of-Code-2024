@@ -11,8 +11,8 @@ ans = 0
 
 for word in words:
     for offset in offsets:
-        pattern = "(?s)(?=%s)" % (".{%d}" % offset).join(word)
-        matches = re.findall(pattern, data)
+        pattern = re.compile("(?s)(?=%s)" % (".{%d}" % offset).join(word))
+        matches = pattern.findall(data)
         count = len(matches)
         ans += count
 
