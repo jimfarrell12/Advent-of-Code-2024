@@ -4,7 +4,7 @@ with open("input_day3.txt") as file:
     data = file.read()
 
 pattern = re.compile(r"mul\(([0-9]+),([0-9]+)\)")
-matches = re.findall(pattern, data)
+matches = pattern.findall(data)
 
 ans = 0
 
