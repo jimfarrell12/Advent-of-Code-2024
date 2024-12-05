@@ -5,13 +5,13 @@ a = []
 b = []
 
 for line in lines:
-    nums = line.split()
+    nums = list(map(int, line.split()))
     a.append(nums[0])
     b.append(nums[1])
 
 ans = 0
 
 for num in a:
-    ans += int(num) * b.count(num)
+    ans += num * b.count(num)
 
 print(ans)
