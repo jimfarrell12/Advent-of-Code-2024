@@ -12,7 +12,7 @@ for line in lines:
     within_range = all(1 <= abs(a - b) <= 3 for a, b in pairs)
 
     is_safe = (increasing or decreasing) and within_range
-    print(f"{line}: {is_safe}")
+    #print(f"{line}: {is_safe}")
 
     if is_safe:
         safe_count += 1
