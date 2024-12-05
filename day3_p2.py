@@ -6,8 +6,8 @@ with "input_day3.txt".open() as file:
 pattern = re.compile(r"(do\(\))|(don't\(\))|mul\(([0-9]+),([0-9]+)\)")
 matches = pattern.findall(data)
 
-active = True
 ans = 0
+active = True
 
 for do, dont, a, b in matches:
     if do:
