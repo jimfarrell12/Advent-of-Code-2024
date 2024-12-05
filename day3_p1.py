@@ -1,4 +1,3 @@
-
 import re 
 
 with open("input_day3.txt") as file:
