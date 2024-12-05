@@ -1,0 +1,16 @@
+
+import re 
+
+with open("input_day3.txt") as file:
+    data = file.read()
+
+pattern = re.compile(r'mul\((\d{1,3}),(\d{1,3})\)')
+matches = re.findall(pattern, data)
+
+ans = 0
+
+for pair in matches:
+    product = int(pair[0]) * int(pair[1])
+    ans += product
+
+print(ans)
