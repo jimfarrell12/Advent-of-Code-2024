@@ -1,3 +1,5 @@
+import re
+
 with "input_day3.txt".open() as file:
     data = file.read()
 
