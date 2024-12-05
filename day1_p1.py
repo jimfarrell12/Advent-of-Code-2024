@@ -12,12 +12,10 @@ for line in lines:
 a.sort()
 b.sort()
 
-diffs = []
+ans = 0
 
 for i in range(len(a)):
     diff = abs(a[i] - b[i])
-    diffs.append(diff)
+    ans += diff
 
-total_diff = sum(diffs)
-
-print(total_diff)
+print(ans)
