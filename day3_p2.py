@@ -1,6 +1,6 @@
 import re
 
-with "input_day3.txt".open() as file:
+with open("input_day3.txt") as file:
     data = file.read()
 
 pattern = re.compile(r"(do\(\))|(don't\(\))|mul\(([0-9]+),([0-9]+)\)")
