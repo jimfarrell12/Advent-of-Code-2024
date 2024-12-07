@@ -18,6 +18,7 @@ for x, y in rules:
     map[(x, y)] = True
     map[(y, x)] = False
 
+
 correct_updates = []
 incorrect_updates = []
 
@@ -33,7 +34,7 @@ def is_ordered(update, map):
     return True
 
 
-def correct_update(update, map):
+def reorder(update, map):
     for i in range(len(update)):
         for j in range(len(update) - 1):
             a, b  = update[j], update[j + 1]
@@ -50,10 +51,9 @@ for update in updates:
         correct_sum += middle_num
     else:
         incorrect_updates.append(update)
-        corrected_sequence = correct_update(update.copy(), map)
-        corrected_middle_i = len(corrected_sequence) // 2
-        corrected_middle_num = corrected_sequence[corrected_middle_i]
+        corrected_update = reorder(update.copy(), map)
+        corrected_middle_i = len(corrected_update) // 2
+        corrected_middle_num = corrected_update[corrected_middle_i]
         corrected_sum += corrected_middle_num
-
 
 print(correct_sum, corrected_sum)
