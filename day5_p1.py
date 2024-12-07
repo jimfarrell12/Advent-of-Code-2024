@@ -4,16 +4,12 @@ with "input_day5.txt".open() as file:
 rules = []
 updates = []
 
-rule_char = "|"
-update_char = ","
-
-
 for num in nums:
-    if rule_char in num:
-        rule = list(map(int, num.split(rule_char)))
+    if "|" in num:
+        rule = list(map(int, num.split("|")))
         rules.append(rule)
     else:
-        update = list(map(int, num.split(update_char)))
+        update = list(map(int, num.split(",")))
         updates.append(update)
 
 map = {}
@@ -23,24 +19,21 @@ for x, y in rules:
     map[(y, x)] = False
 
 correct_updates = []
-#middle_nums = []
 ans = 0
 
+def is_ordered(update, map):
+    for i in range(len(update)):
+        for j in range(i + 1, len(update)):
+            x, y = update[i], update[j]
+            if (x, y) in map and not map[(x, y)]:
+                return False
+    return True
+
 for update in updates:
-    in_order = True 
-
-    for i in range(len(update) - 1):
-        x, y = update[i], update[i + 1]
-
-        if (x, y) in map and map[(y, x)]:
-            in_order = False
-            break
-
-    if in_order:
+    if is_ordered(update, map):
         correct_updates.append(update)
         middle_i = len(update) // 2
         middle_num = update[middle_i]
-        #middle_nums.append(middle_num)
         ans += middle_num
 
 print(ans)
