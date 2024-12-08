@@ -3,8 +3,8 @@ import re
 with open("input_day3.txt") as file:
     data = file.read()
 
-pattern = re.compile(r"mul\(([0-9]+),([0-9]+)\)")
-matches = pattern.findall(data)
+pattern = r"mul\(([0-9]+),([0-9]+)\)"
+matches = re.findall(pattern, data)
 
 ans = 0
 
